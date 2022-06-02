@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Ekle
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-5">
+        <app-operation-claim-add></app-operation-claim-add>
+      </div>
+    </div>
+  </div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                İsim
+            </th>
+            <th>
+                Durum
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let operationClaim of operationClaims">
+            <td>
+                {{
+                    operationClaim.name
+                }}
+            </td>
+
+            <td>
+                {{
+                    operationClaim.isApproved === true ? 'aktif' : 'aktif değil'
+                }}
+            </td>
+
+            <td >
+                <button mat-button color="warn" (click)="delete(operationClaim)">Sil</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

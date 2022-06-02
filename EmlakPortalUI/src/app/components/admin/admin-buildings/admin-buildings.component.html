@@ -1,0 +1,72 @@
+<div class="container d-flex justify-content-center mt-2">
+ 
+  <form [formGroup]="addForm">
+      <h1 class="text-center">Ev</h1>
+
+      <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Başlık</mat-label>
+          <input type="text" matInput  formControlName="title" autocomplete="off">     
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Açıklama</mat-label>
+          <input type="text" matInput  formControlName="description" autocomplete="off">     
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Fotoğraf</mat-label>
+          <input type="text" matInput  formControlName="image" autocomplete="off">     
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Yer</mat-label>
+          <input type="text" matInput  formControlName="location" autocomplete="off">     
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Tel-No</mat-label>
+          <input type="text" matInput  formControlName="phoneNumber" autocomplete="off">     
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Fiyat</mat-label>
+          <input type="number" matInput  formControlName="price" autocomplete="off">     
+        </mat-form-field>
+      
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Genişlik</mat-label>
+          <input type="text" matInput  formControlName="squareMeter" autocomplete="off">     
+        </mat-form-field>
+
+
+        
+      <div class="gap-2 d-grid">
+          <button type="submit" class="btn btn-primary" (click)="add()">Ekle</button>
+      </div>
+    </form>
+</div>
+<hr>
+<div class="container">
+    
+    <div class="row mt-5">
+        <div class="col-lg-4" *ngFor="let building of buildings">
+            <div class="card" style="width: 18rem;">
+                <img src="{{building.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title">
+                      {{
+                        building.title
+                      }}
+                  </h4>
+                  <p class="card-text">
+                      fiyat :  {{building.price}} <br>
+                      büyüklük : {{building.squareMeter}} <br>
+                      yer : {{building.location}} <br>
+                  </p>
+                  <button href="#" class="btn btn-primary" routerLink="/building-detail/{{building.id}}">Incele</button> ---
+                  <button href="#" class="btn btn-danger" (click)="delete(building)">Sil</button>
+                </div>
+              </div>
+        </div>
+    </div>
+    </div>

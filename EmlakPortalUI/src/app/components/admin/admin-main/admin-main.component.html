@@ -1,0 +1,41 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    {{
+      userEmail
+    }}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><button class="dropdown-item" routerLink="/">Ana sayfa</button></li>
+    <li><button class="dropdown-item" (click)="logout()">Çıkış yap</button></li>
+  </ul>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="build-tab" data-bs-toggle="tab" data-bs-target="#build" type="button" role="tab" aria-controls="build" aria-selected="true">buildings</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="operationccc-tab" data-bs-toggle="tab" data-bs-target="#operationccc" type="button" role="tab" aria-controls="operationccc" aria-selected="false">operation-claim</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="useroperation-tab" data-bs-toggle="tab" data-bs-target="#useroperation" type="button" role="tab" aria-controls="useroperation" aria-selected="false">user-operation-claim</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="usersss-tab" data-bs-toggle="tab" data-bs-target="#usersss" type="button" role="tab" aria-controls="usersss" aria-selected="false">users</button>
+      </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="build" role="tabpanel" aria-labelledby="build-tab">
+        <app-admin-buildings></app-admin-buildings>
+    </div>
+    <div class="tab-pane fade" id="operationccc" role="tabpanel" aria-labelledby="operationccc-tab">
+        <app-operation-claim-list></app-operation-claim-list>
+    </div>
+    <div class="tab-pane fade" id="useroperation" role="tabpanel" aria-labelledby="useroperation-tab">
+        <app-user-operation-claim-list></app-user-operation-claim-list>
+    </div>
+    <div class="tab-pane fade" id="usersss" role="tabpanel" aria-labelledby="usersss-tab">
+        <app-users></app-users>
+    </div>
+  </div>

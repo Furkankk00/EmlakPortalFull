@@ -1,0 +1,27 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+
+    <button type="button" class="btn btn-primary" routerLink="/">Ana Sayfa</button>
+    <button type="button" class="btn btn-primary" routerLink="/buildings">Evler</button>
+
+        <button type="button" class="btn btn-primary" routerLink="/login" *ngIf="!isLogin">Giriş Yap</button>
+        <button type="button" class="btn btn-primary" routerLink="/register" *ngIf="!isLogin">Kayıt Ol</button>
+ 
+
+        <button type="button" class="btn btn-primary" routerLink="/admin" *ngIf="isLogin && isAdmin">Panel</button>
+       
+        <button type="button" class="btn btn-primary" *ngIf="isLogin" disabled>
+            {{
+                expiration|date:'short'
+            }}
+        </button>
+
+        <button type="button" class="btn btn-info" *ngIf="isLogin" disabled>
+            {{email}}
+        </button>
+        <button type="button" (click)="logout()" class="btn btn-danger" *ngIf="isLogin">
+            Çıkış yap
+        </button>
+
+</div>
+
+<router-outlet></router-outlet>

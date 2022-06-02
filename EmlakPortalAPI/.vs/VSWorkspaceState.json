@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DataAccess",
+    "\\EmlakPortal",
+    "\\EmlakPortal\\Business",
+    "\\Entities",
+    "\\NetWebAPI"
+  ],
+  "SelectedNode": "\\EmlakPortal\\Business\\Business.csproj",
+  "PreviewInSolutionExplorer": false
+}

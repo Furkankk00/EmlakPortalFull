@@ -1,0 +1,23 @@
+<div class="container">
+    
+<div class="row mt-5">
+    <div class="col-lg-4" *ngFor="let building of buildings">
+        <div class="card" style="width: 18rem;">
+            <img src="{{building.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title">
+                  {{
+                    building.title
+                  }}
+              </h4>
+              <p class="card-text">
+                  fiyat :  {{building.price}} <br>
+                  büyüklük : {{building.squareMeter}} <br>
+                  yer : {{building.location}} <br>
+              </p>
+              <button href="#" class="btn btn-primary" routerLink="/building-detail/{{building.id}}">Incele</button>
+            </div>
+          </div>
+    </div>
+</div>
+</div>
